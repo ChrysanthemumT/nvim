@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
-    use 'mfussenegger/nvim-jdtls'
+    use('mfussenegger/nvim-jdtls')
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -39,7 +39,8 @@ return require('packer').startup(function(use)
         {'hrsh7th/nvim-cmp'},     -- Required
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
         {'L3MON4D3/LuaSnip'},     -- Required
-    }
+    },
+    use'lervag/vimtex'
 }
 use('xiyaowong/transparent.nvim')
 
