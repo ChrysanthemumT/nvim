@@ -21,7 +21,7 @@ return {
             {},
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
-
+        vim.filetype.add({ extension = { templ = "templ" } })
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -29,6 +29,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
+                "templ",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -51,6 +52,11 @@ return {
                         }
                     }
                 end,
+
+                ['templ'] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.templ.setup{}
+                end,
             }
         })
 
@@ -72,8 +78,8 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
-                { name = 'buffer' },
-            })
+                    { name = 'buffer' },
+                })
         })
 
         vim.diagnostic.config({
