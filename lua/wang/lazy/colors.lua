@@ -12,4 +12,14 @@ return {
             vim.cmd("colorscheme nordfox")
         end
     },
+    {
+        "olivercederborg/poimandres.nvim",
+        config = function()
+            require('poimandres').setup {
+                disable_background = true,
+                disable_float_background = true,
+            }
+            --vim.cmd("colorscheme poimandres")
+        end
+    }
 }
