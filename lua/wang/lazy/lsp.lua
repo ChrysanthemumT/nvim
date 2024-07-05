@@ -29,11 +29,9 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
-                "templ",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
-
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
@@ -55,7 +53,7 @@ return {
 
                 ['templ'] = function()
                     local lspconfig = require("lspconfig")
-                    lspconfig.templ.setup{}
+                    lspconfig.templ.setup {}
                 end,
             }
         })
@@ -78,8 +76,8 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
-                    { name = 'buffer' },
-                })
+                { name = 'buffer' },
+            })
         })
 
         vim.diagnostic.config({
