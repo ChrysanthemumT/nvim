@@ -27,7 +27,8 @@ return {
             lua = { 'stylua' },
             cpp = { 'clang-format' },
             c = { 'clang-format' },
-            templ = { 'templ' }
+            templ = { 'templ' },
+            ocaml = { 'ocamlformat' }
             -- Conform can also run multiple formatters sequentially
             -- python = { "isort", "black" },
             --

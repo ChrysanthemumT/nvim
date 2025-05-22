@@ -55,35 +55,17 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.templ.setup {}
                 end,
-                --[["clangd"] = function()
+
+                ['ocaml'] = function()
                     local lspconfig = require("lspconfig")
-                    lspconfig.clangd.setup {
-                        capabilities = capabilities,
-                        root_dir = function(fname)
-                            local util = require("lspconfig.util")
-                            local root = lspconfig.util.find_git_ancestor(fname) or
-                                util.root_pattern("CMakeLists.txt")(
-                                    fname)
-
-                            if root then
-                                local has_commands = vim.fn.filereadable(root .. "/compile_commands.json") == 1
-                                    or vim.fn.filereadable(root .. "/build/compile_commands.json") == 1
-
-                                if has_commands then
-                                    return root
-                                end
-                            else
-                                print("clangd not started: No compile_commands.json found")
-                                return nil
-                            end
-                        end,
-                    }
+                    lspconfig.ocamllsp.setup {}
                 end,
-                --]]
             }
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+        -- external
 
         cmp.setup({
             snippet = {
