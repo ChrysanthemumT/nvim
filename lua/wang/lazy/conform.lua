@@ -36,5 +36,10 @@ return {
             -- is found.
             -- javascript = { { "prettierd", "prettier" } },
         },
+        formatters = {
+            ['clang-format'] = {
+                prepend_args = { '--style={IndentWidth: 4, TabWidth: 4, UseTab: Never}' }
+            }
+        }
     },
 }
