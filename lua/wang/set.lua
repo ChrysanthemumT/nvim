@@ -13,7 +13,7 @@ vim.opt.smartindent = true
 
 -- testing wrap
 vim.opt.wrap = true
-vim.opt.textwidth = 65
+vim.opt.textwidth = 90
 
 vim.opt.swapfile = false
 vim.opt.backup = false

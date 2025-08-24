@@ -28,7 +28,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
-                "tsserver",
+                "clangd",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -51,14 +51,21 @@ return {
                     }
                 end,
 
-                ['templ'] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.templ.setup {}
-                end,
-
                 ['ocaml'] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.ocamllsp.setup {}
+                end,
+
+                ["clangd"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.clangd.setup {
+                        capabilities = capabilities,
+                        cmd = {
+                            "clangd",
+                            "--query-driver=/opt/arm-toolchain/bin/arm-none-eabi-g*",
+                        },
+                        filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+                    }
                 end,
             }
         })
