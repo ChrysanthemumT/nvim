@@ -42,5 +42,24 @@ return {
         }
 
         vim.treesitter.language.register("templ", "templ")
+        vim.api.nvim_set_hl(0, '@markup.heading.5.markdown', { fg = '#f4a6a3', bold = true })
+        vim.api.nvim_set_hl(0, '@markup.heading.6.markdown', { fg = '#f9c5a6', bold = true })
+        vim.api.nvim_set_hl(0, '@markup.heading.1.markdown', { fg = '#f9e5a6', bold = true })
+        vim.api.nvim_set_hl(0, '@markup.heading.4.markdown', { fg = '#b8ddb8', bold = true })
+        vim.api.nvim_set_hl(0, '@markup.heading.2.markdown', { fg = '#a6d4f4', bold = true })
+        vim.api.nvim_set_hl(0, '@markup.heading.3.markdown', { fg = '#d4b8dd', bold = true })
+
+        vim.api.nvim_set_hl(0, '@markup.strong.markdown_inline', { fg = '#ffc2e2', bold = true })
+        vim.api.nvim_set_hl(0, '@markup.italic.markdown_inline', { fg = '#b8ddb8', italic = true })
+        vim.api.nvim_set_hl(0, '@markup.strikethrough.markdown_inline', { fg = '#c4c9d4', strikethrough = true })
+
+        vim.api.nvim_set_hl(0, '@markup.link.label.markdown_inline', { fg = '#a6c4f4', underline = true })
+        vim.api.nvim_set_hl(0, '@markup.link.url.markdown_inline', { fg = '#b8d4f4' })
+
+        vim.api.nvim_set_hl(0, '@markup.raw.markdown_inline', { fg = '#a6e4e4', bg = '#3a3f4b' })
+        vim.api.nvim_set_hl(0, '@markup.raw.block.markdown', { fg = '#a6e4e4', bg = '#3a3f4b' })
+
+        vim.api.nvim_set_hl(0, '@markup.list.markdown', { fg = '#d4b8dd' })
+        vim.api.nvim_set_hl(0, '@markup.quote.markdown', { fg = '#b4b8c4', italic = true })
     end
 }
