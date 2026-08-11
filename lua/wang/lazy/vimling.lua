@@ -18,6 +18,8 @@ return {
             vim.keymap.set("n", "<leader>lt", ":call ToggleTrans()<CR>",
                 vim.tbl_extend("force", opts, { desc = "Toggle transliteration" }))
 
+            vim.keymap.set("i", "''", "'", { silent = true, noremap = true })
+
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = { "markdown", "tex", "txt", "org" },
                 group = vim.api.nvim_create_augroup("VimlingAutoEnable", { clear = true }),

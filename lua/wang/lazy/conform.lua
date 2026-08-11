@@ -38,7 +38,7 @@ return {
         },
         formatters = {
             ['clang-format'] = {
-                prepend_args = { '--style={IndentWidth: 4, TabWidth: 4, UseTab: Never}' }
+                prepend_args = { '--style={IndentWidth: 4, TabWidth: 4, UseTab: Never, AlwaysBreakTemplateDeclarations: Yes, IndentAccessModifiers: false, AccessModifierOffset: -4}' }
             }
         }
     },
